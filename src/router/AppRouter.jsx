@@ -7,7 +7,7 @@ import CreateGoal from "../pages/CreateGoal";
 import GoalDetails from "../pages/GoalDetails";
 import Settings from "../pages/Settings";
 import NotFound from "../pages/NotFound";
-import Categories from "../pages/categories";
+import Categories from "../pages/Categories";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 

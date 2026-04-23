@@ -108,10 +108,12 @@ It helps users create goals, track progress, and stay motivated using gamificati
 - Recharts (Charts)
 
 ##  Project Structure
-bash src/ ├── components/ ├── pages/ ├── layout/ ├── context/ ├── router/ ├── i18n/ ├── theme/ └── App.jsx
+
+ src/ ├── components/ ├── pages/ ├── layout/ ├── context/ ├── router/ ├── i18n/ ├── theme/ └── App.jsx
 ---
 
 ##  Installation
-bash  cd goal-tracker npm install npm run dev
+  cd goal-tracker
+  npm install npm run dev
 ---
 

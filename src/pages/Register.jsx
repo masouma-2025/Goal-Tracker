@@ -16,13 +16,13 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { useNavigate, Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import { useTranslation } from "react-i18next";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 const getSchema = (t) =>
   yup.object({
@@ -38,7 +38,10 @@ const getSchema = (t) =>
 
     confirmPassword: yup
       .string()
-      .oneOf([yup.ref("password")], t("passwordMismatch") || "Passwords must match")
+      .oneOf(
+        [yup.ref("password")],
+        t("passwordMismatch") || "Passwords must match"
+      )
       .required(t("required"))
   });
 
@@ -67,15 +70,15 @@ export default function Register() {
     setErrorMsg("");
 
     try {
-      await new Promise(res => setTimeout(res, 800));
+      await new Promise((res) => setTimeout(res, 800));
 
       login(data.name);
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
 
     } catch (err) {
       setErrorMsg(t("error"));
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   }
 
@@ -103,7 +106,13 @@ export default function Register() {
           {t("register")} 🚀
         </Typography>
 
-        <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmit)}
+          sx={{
+            direction: "ltr" 
+          }}
+        >
           <Stack spacing={3}>
 
             {errorMsg && <Alert severity="error">{errorMsg}</Alert>}
@@ -116,6 +125,7 @@ export default function Register() {
               fullWidth
               disabled={loading}
               autoComplete="username"
+              inputProps={{ dir: "ltr" }}
             />
 
             <TextField
@@ -127,6 +137,7 @@ export default function Register() {
               fullWidth
               disabled={loading}
               autoComplete="new-password"
+              inputProps={{ dir: "ltr" }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -147,6 +158,7 @@ export default function Register() {
               fullWidth
               disabled={loading}
               autoComplete="new-password"
+              inputProps={{ dir: "ltr" }}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">

@@ -106,7 +106,7 @@ export default function Register() {
         <Box component="form" onSubmit={handleSubmit(onSubmit)}>
           <Stack spacing={3}>
 
-\            {errorMsg && <Alert severity="error">{errorMsg}</Alert>}
+            {errorMsg && <Alert severity="error">{errorMsg}</Alert>}
 
             <TextField
               label={t("name")}

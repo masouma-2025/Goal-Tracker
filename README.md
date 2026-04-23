@@ -112,6 +112,6 @@ bash src/ ├── components/ ├── pages/ ├── layout/ ├── con
 ---
 
 ##  Installation
-bash git clone https://github.com/USERNAME/REPO.git cd goal-tracker npm install npm run dev
+bash  cd goal-tracker npm install npm run dev
 ---
 
